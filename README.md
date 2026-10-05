@@ -38,8 +38,9 @@ Only booking-form submissions are saved. The quick WhatsApp buttons go straight 
 - Add the contribution amounts (search for `contribution` in `index.html`).
 - Add Ma Shallu's short bio (search for `TODO`).
 - Paste the GA4 and Meta Pixel codes where the `ANALYTICS` comment is in `<head>`.
-- Update the `canonical`, `og:url` and `og:image` URLs in `<head>` to the live address.
 
 ## Hosting
 
-Deployed on Netlify from this repo. `netlify.toml` tells Netlify to publish the folder as-is.
+Deployed on Netlify from this repo. `netlify.toml` tells Netlify to publish the folder as-is. `404.html` is shown for any address that doesn't exist, instead of Netlify's default page.
+
+The `canonical`, `og:url` and `og:image` URLs in `<head>`, and the first `image` in the JSON-LD, point to https://mysticrosejaipur.netlify.app/. If the page moves to its own domain, change all four to the new address.
