@@ -4,7 +4,7 @@ Landing page for the OSHO Mystic Rose at Osho Jaipur, 10–31 October 2026, faci
 
 A single static page with no build step: `index.html` plus images in `assets/`. Open `index.html` in a browser to preview it.
 
-Current release: **Release 2 (v2.0)**. See [CHANGELOG.md](CHANGELOG.md) for what changed and why.
+Current release: **Release 3 (v3.0)**. See [CHANGELOG.md](CHANGELOG.md) for what changed and why.
 
 ## How it works
 
@@ -40,7 +40,6 @@ Only booking-form submissions are saved. The quick WhatsApp buttons go straight 
 
 - Add the contribution amounts (search for `contribution` in `index.html`). Ad visitors who can't see a price are the most likely to leave.
 - Ask Ma Shallu to approve her bio, which was taken from shalluannand.com, and to add how many Mystic Rose groups she has led.
-- Add 2–3 short quotes from Osho Jaipur's own past participants, with their permission (search for `TODO`).
 - Paste the GA4 and Meta Pixel codes where the `ANALYTICS` comment is in `<head>`.
 - Set up the lead form (see above) so booking-form leads also land in the Sheet.
 

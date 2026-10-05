@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 3 (v3.0) · 5 October 2026
+
+Release 2, with two sections removed at the team's request:
+
+- **"What stays with people"**: the figures and quotes from Osho Dham's study.
+- **"Is it for you?"**: the "This is for you if…" and "Talk to us first if…" cards.
+
+Everything else from Release 2 stays, including the centre video, the facilitator bio, the faster hero, the booking steps and the Call button. Health guidance is still on the page, in the FAQ ("I have a health condition. Can I join?").
+
 ## Release 2 (v2.0) · 5 October 2026
 
 A review of release 1 against high-converting retreat pages (Osho Nisarga, Osho International, Isha's Inner Engineering) and Google's landing-page guidance for Search and YouTube ads, followed by the changes below.

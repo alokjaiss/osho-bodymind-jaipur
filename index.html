@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Release 2 (v2.0) · 5 Oct 2026 · see CHANGELOG.md -->
+<!-- Release 3 (v3.0) · 5 Oct 2026 · see CHANGELOG.md -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -220,37 +220,6 @@ p{margin:0 0 1em}
 .mid-cta{margin-top:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px 32px;padding:30px 34px;border-radius:var(--radius);background:linear-gradient(120deg, rgba(254,96,53,.16), rgba(176,58,88,.14));border:1px solid rgba(254,96,53,.3)}
 .mid-cta p{margin:0;font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.2}
 
-/* ---------- PROOF ---------- */
-.proof{background:var(--cream)}
-.proof-head{max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
-.proof-head p{color:var(--ink-soft);font-size:1.1rem;margin-top:20px}
-.stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
-.stats li{padding:30px 28px 32px 0}
-.stats li + li{padding-left:28px;border-left:1px solid var(--sand)}
-.stats b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(3.2rem,6vw,4.6rem);line-height:1;color:var(--maroon);margin-bottom:12px}
-.stats span{display:block;color:var(--ink-soft);max-width:19em}
-.voices{list-style:none;margin:clamp(36px,5vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.voices blockquote{margin:0;height:100%;background:var(--ivory);border:1px solid var(--sand);border-radius:var(--radius);padding:28px 26px 30px;font-family:var(--serif);font-size:1.38rem;line-height:1.3}
-.voices blockquote::before{content:"“";display:block;font-size:3.4rem;line-height:.6;color:var(--rose);margin-bottom:6px}
-.source{margin:26px 0 0;font-size:.88rem;color:var(--ink-soft);max-width:52em}
-.source a{color:var(--maroon)}
-
-/* ---------- FIT ---------- */
-.fit{background:var(--ivory)}
-.fit-head{max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
-.fit-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
-.fit-card{border-radius:var(--radius);padding:clamp(26px,3.5vw,40px)}
-.fit-yes{background:#fff;border:1px solid var(--sand)}
-.fit-ask{background:var(--cream)}
-.fit-card h3{font-size:1.75rem;margin-bottom:12px}
-.ticks{list-style:none;margin:0;padding:0}
-.ticks li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--sand)}
-.ticks li:last-child{border-bottom:0;padding-bottom:0}
-.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6l4.5-5' fill='none' stroke='%231d0b10' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
-.ticks.ask li{font-size:.98rem;color:var(--ink-soft)}
-.ticks.ask li b{color:var(--ink);font-weight:600}
-.ticks.ask li::before{width:8px;height:8px;margin:10px 6px 0;border-radius:0;background:var(--gold);transform:rotate(45deg)}
-.fit-ask .btn{margin-top:24px}
 /* ---------- DAY ---------- */
 .day{background:var(--cream)}
 .day-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,110px)}
@@ -425,13 +394,8 @@ footer a{color:var(--on-dark-soft)}
   .facts{grid-template-columns:1fr 1fr}
   .facts div{padding:16px 12px 18px 0}
   .facts dd{font-size:1.15rem}
-  .mirror-grid,.day-grid,.guide-grid,.prep-grid,.place-head,.fit-grid{grid-template-columns:1fr}
+  .mirror-grid,.day-grid,.guide-grid,.prep-grid,.place-head{grid-template-columns:1fr}
   .final-grid{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"intro" "form" "more";row-gap:44px}
-  .stats{grid-template-columns:1fr}
-  .stats li,.stats li + li{padding:22px 0 24px;border-left:0}
-  .stats li + li{border-top:1px solid var(--sand)}
-  .voices{grid-template-columns:1fr;gap:14px}
-  .voices blockquote{font-size:1.25rem;padding:22px 22px 24px}
   .mirror h2{position:static}
   .weeks-grid{grid-template-columns:1fr}
   .rose-stage{display:none}
@@ -593,61 +557,6 @@ footer a{color:var(--on-dark-soft)}
       <p data-when="before">Arrival is Saturday 10 October, 4&nbsp;PM.<br>Places are confirmed on WhatsApp.</p>
       <p data-when="after" hidden>This round has begun.<br>Be the first to hear about the next one.</p>
       <a class="btn btn-primary" data-wa="join" data-place="mid" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg><span data-when="before">Reserve my place</span><span data-when="after" hidden>Join the list</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROOF ================= -->
-<section class="proof sec" id="stories">
-  <div class="wrap">
-    <div class="proof-head">
-      <p class="eyebrow">What stays with people</p>
-      <h2>Ninety-seven people were asked <em>what it changed.</em></h2>
-      <p>In 2026, Osho Dham in New Delhi asked 97 people who had completed the Mystic Rose, some a few months earlier and some years before, how they felt when it ended and what stayed with them.</p>
-    </div>
-    <ul class="stats reveal">
-      <li><b>65%</b><span>of first-timers said they were better able to handle life's challenges</span></li>
-      <li><b>73%</b><span>of those who came back for another round felt light, alive and good in the body when it ended</span></li>
-      <li><b>4 of 97</b><span>said the effects had faded, or never came. Everyone else described something that lasted.</span></li>
-    </ul>
-    <!-- TODO: add 2–3 short quotes from Osho Jaipur's own past participants (with their permission;
-         first name and city). Your own people's words will convert better than any study. -->
-    <ul class="voices">
-      <li class="reveal"><blockquote>It felt as if heavy layers were melting away, leaving me lighter and freer.</blockquote></li>
-      <li class="reveal"><blockquote>I was able to stand back and reflect on my situation, rather than react compulsively.</blockquote></li>
-      <li class="reveal"><blockquote>I worry less about little problems. I'm trying out more things now, things I avoided before.</blockquote></li>
-    </ul>
-    <p class="source">Figures and quotes are from a questionnaire study of 97 Mystic Rose participants by Swami Vee, commissioned by Osho Dham, New Delhi. <a href="https://www.oshonews.com/2026/07/15/osho-mystic-rose-a-study-of-participants-experiences/" target="_blank" rel="noopener">Read the study on Osho News</a></p>
-  </div>
-</section>
-
-<!-- ================= FIT ================= -->
-<section class="fit sec" id="fit">
-  <div class="wrap">
-    <div class="fit-head">
-      <p class="eyebrow">Is it for you?</p>
-      <h2>Made for people who've been <em>strong for too long.</em></h2>
-    </div>
-    <div class="fit-grid">
-      <div class="fit-card fit-yes reveal">
-        <h3>This is for you if…</h3>
-        <ul class="ticks">
-          <li>You've been holding it together for a long time, and it's getting heavy.</li>
-          <li>You can't remember the last time you really laughed, or really cried.</li>
-          <li>You meditate, or want to, but the mind won't settle.</li>
-          <li>You're at a turning point and want to meet it with a clear head.</li>
-          <li>You're ready to give yourself 21 days away from everyday life.</li>
-        </ul>
-      </div>
-      <div class="fit-card fit-ask reveal">
-        <h3>Talk to us first if…</h3>
-        <ul class="ticks ask">
-          <li><span><b>You're pregnant, or recovering from surgery or an injury.</b> OSHO Dynamic and Kundalini are physically active.</span></li>
-          <li><span><b>You're being treated for a physical or mental-health condition.</b> The Mystic Rose is a meditation, not a substitute for medical or psychological care.</span></li>
-          <li><span><b>You can't stay all 21 days.</b> Each week builds on the last.</span></li>
-        </ul>
-        <a class="btn btn-line" data-wa="question" data-place="fit" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg>Ask us honestly</a>
-      </div>
     </div>
   </div>
 </section>
