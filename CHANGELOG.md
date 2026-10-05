@@ -1,0 +1,46 @@
+# Changelog
+
+## Release 2 (v2.0) · 5 October 2026
+
+A review of release 1 against high-converting retreat pages (Osho Nisarga, Osho International, Isha's Inner Engineering) and Google's landing-page guidance for Search and YouTube ads, followed by the changes below.
+
+### What release 1 already did well (kept)
+
+- A headline that explains the whole offer at a glance: "Laugh. Cry. Then be silent."
+- WhatsApp-first booking, which is how people in India prefer to enquire.
+- An honest countdown, a sticky Reserve bar, and an automatic switch to "next one" mode after the start.
+- Campaign tags carried into every WhatsApp message, and analytics events ready for GA4 and Meta.
+
+### What was missing, and what changed
+
+| Gap in release 1 | Change in release 2 |
+| --- | --- |
+| **No video.** Retreat pages use video to show the place, and YouTube ad traffic expects to see the same thing it clicked on. | The Osho Jaipur centre video (59 sec) now sits at the top of "The place", with a "See the centre" link in the hero. It loads only when tapped, so the page stays fast. The poster is our own garden photo because YouTube's auto-thumbnail is a doorway. Plays are tracked as `video_play`. |
+| **No social proof at all.** Every top-performing page shows proof: numbers, voices, research. | New "What stays with people" section with figures and three quotes from a 2026 study of 97 Mystic Rose participants (Osho Dham, New Delhi), clearly attributed and linked to the source. |
+| **Facilitator bio was a TODO.** This was the biggest trust gap on the page. | Bio and credentials from Ma Shallu's own site: meditating since 1998, OSHO Multiversity in Pune, certified by the OSHO Foundation to lead OSHO Meditative Therapies. Also named as "OSHO-certified" in the hero. |
+| **No "is this for me?" filter or health guidance.** | New "Is it for you?" section: who it's for, and who should talk to us first (pregnancy, recent surgery, being treated for a physical or mental-health condition). Two new FAQs. The page makes no medical claims, in line with Google's health-ads policy. |
+| **The Reserve button appeared only after about 1.4 s**, held back by the hero animation. That delays first action and hurts Google's speed score (LCP). | Only the headline animates now, in under a second. The lede and buttons show on first paint. LCP measured locally: about 1.1–1.4 s. |
+| **Booking felt like a black box.** | Three steps by the form: send details, hear back usually the same day, confirm by UPI or bank transfer. |
+| **On phones the form was buried** under the countdown, contacts, share button and the November retreat. | On phones the form now comes straight after the three steps, and the extras follow it. |
+| **No urgency in the last week.** | The countdown now says "Starts this Saturday", "Starts tomorrow" or "Starts today", based on Indian time. |
+| **The logo sent ad visitors to oshojaipur.com.** | The logo now goes back to the top of this page. |
+| **The sticky bar was WhatsApp only.** | A Call button next to Reserve. |
+
+Also in this release:
+
+- The booking form no longer asks for a phone number. It arrives with the WhatsApp message anyway, and the README's Google Form setup now lists 6 questions instead of 8.
+- Video structured data (`VideoObject`) was added next to the event data.
+- The README has a new section on running Google and YouTube ads to the page: tagged links, conversions, headlines that match the page, and policy.
+
+### Still to do before ads go live
+
+1. **Show the contribution for each room.** Hidden prices are the biggest drop-off point for ad traffic.
+2. **Add 2–3 quotes from Osho Jaipur's own past participants**, with their permission (search `TODO` in `index.html`). The current quotes come from Osho Dham's study, not from Osho Jaipur's own groups.
+3. **Ask Ma Shallu to approve her bio** and add how many Mystic Rose groups she has led.
+4. Paste the GA4 and Meta Pixel codes, and set up the lead form ID.
+
+## Release 1 (v1.0) · 5 October 2026
+
+- Single-page landing page for the OSHO Mystic Rose at Osho Jaipur, 10–31 October 2026, with WhatsApp booking, a countdown, the three-week process, a daily rhythm, the facilitator, the place, rooms, an FAQ and a booking form.
+- 98288 43839 is the primary number. The lead form sends to WhatsApp and, optionally, to a Google Form and Sheet.
+- A branded 404 page, and share tags pointing at https://mysticrosejaipur.netlify.app/.

@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Release 2 (v2.0) · 5 Oct 2026 · see CHANGELOG.md -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -26,11 +27,11 @@
 <!--
   ANALYTICS: paste your GA4 tag and Meta Pixel base code here.
   The page already fires these events if gtag / fbq exist:
-    whatsapp_click (+ Meta "Contact"), lead_form_submit (+ Meta "Lead"), call_click, share_click
+    whatsapp_click (+ Meta "Contact"), lead_form_submit (+ Meta "Lead"), call_click, share_click, video_play
 -->
 
 <script type="application/ld+json">
-{
+[{
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "OSHO Mystic Rose — 21-Day Meditative Therapy",
@@ -54,7 +55,17 @@
   },
   "performer": { "@type": "Person", "name": "Ma Shallu Annand" },
   "organizer": { "@type": "Organization", "name": "Osho Jaipur", "url": "https://oshojaipur.com/", "telephone": "+91-9828843839", "email": "oshoinjaipur@gmail.com" }
-}
+},
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Welcome to Osho Jaipur",
+  "description": "A one-minute walk through the Osho Jaipur meditation centre, where the OSHO Mystic Rose is held.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/1jzgxVYrJtw/hqdefault.jpg",
+  "uploadDate": "2025-05-25T10:45:10-07:00",
+  "duration": "PT59S",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/1jzgxVYrJtw"
+}]
 </script>
 
 <script>document.documentElement.classList.add('js');</script>
@@ -138,10 +149,16 @@ p{margin:0 0 1em}
 .facts dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:4px}
 .facts dd{margin:0;font-family:var(--serif);font-size:1.35rem;line-height:1.2}
 
-/* Hero entrance */
-.js .hero h1 span,.js .hero .rise{opacity:0;transform:translateY(24px);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
-.js .hero h1 .l1{animation-delay:.15s}.js .hero h1 .l2{animation-delay:.55s}.js .hero h1 .l3{animation-delay:1.05s}
-.js .hero .rise{animation-delay:1.4s}
+.tour-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;text-decoration:none;font-size:.95rem;color:var(--on-dark-soft)}
+.tour-link b{color:var(--ivory);font-weight:600}
+.tour-link i{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(220,192,138,.45);display:grid;place-items:center;color:var(--gold-lt);transition:background-color .25s}
+.tour-link i svg{width:14px;height:14px;margin-left:2px}
+.tour-link:hover i{background:rgba(220,192,138,.14)}
+
+/* Hero entrance: only the headline animates, and quickly, so the offer and
+   the Reserve button are on screen from the first paint (LCP, ad traffic). */
+.js .hero h1 span{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero h1 .l1{animation-delay:.05s}.js .hero h1 .l2{animation-delay:.2s}.js .hero h1 .l3{animation-delay:.38s}
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* ---------- ROSE (generated in JS) ---------- */
@@ -203,6 +220,37 @@ p{margin:0 0 1em}
 .mid-cta{margin-top:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px 32px;padding:30px 34px;border-radius:var(--radius);background:linear-gradient(120deg, rgba(254,96,53,.16), rgba(176,58,88,.14));border:1px solid rgba(254,96,53,.3)}
 .mid-cta p{margin:0;font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.2}
 
+/* ---------- PROOF ---------- */
+.proof{background:var(--cream)}
+.proof-head{max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
+.proof-head p{color:var(--ink-soft);font-size:1.1rem;margin-top:20px}
+.stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
+.stats li{padding:30px 28px 32px 0}
+.stats li + li{padding-left:28px;border-left:1px solid var(--sand)}
+.stats b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(3.2rem,6vw,4.6rem);line-height:1;color:var(--maroon);margin-bottom:12px}
+.stats span{display:block;color:var(--ink-soft);max-width:19em}
+.voices{list-style:none;margin:clamp(36px,5vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.voices blockquote{margin:0;height:100%;background:var(--ivory);border:1px solid var(--sand);border-radius:var(--radius);padding:28px 26px 30px;font-family:var(--serif);font-size:1.38rem;line-height:1.3}
+.voices blockquote::before{content:"“";display:block;font-size:3.4rem;line-height:.6;color:var(--rose);margin-bottom:6px}
+.source{margin:26px 0 0;font-size:.88rem;color:var(--ink-soft);max-width:52em}
+.source a{color:var(--maroon)}
+
+/* ---------- FIT ---------- */
+.fit{background:var(--ivory)}
+.fit-head{max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
+.fit-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+.fit-card{border-radius:var(--radius);padding:clamp(26px,3.5vw,40px)}
+.fit-yes{background:#fff;border:1px solid var(--sand)}
+.fit-ask{background:var(--cream)}
+.fit-card h3{font-size:1.75rem;margin-bottom:12px}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--sand)}
+.ticks li:last-child{border-bottom:0;padding-bottom:0}
+.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6l4.5-5' fill='none' stroke='%231d0b10' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.ticks.ask li{font-size:.98rem;color:var(--ink-soft)}
+.ticks.ask li b{color:var(--ink);font-weight:600}
+.ticks.ask li::before{width:8px;height:8px;margin:10px 6px 0;border-radius:0;background:var(--gold);transform:rotate(45deg)}
+.fit-ask .btn{margin-top:24px}
 /* ---------- DAY ---------- */
 .day{background:var(--cream)}
 .day-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,110px)}
@@ -225,19 +273,33 @@ p{margin:0 0 1em}
 .arch::after{content:"";position:absolute;inset:10px;border-radius:999px 999px 14px 14px;border:1px solid rgba(255,255,255,.55);pointer-events:none}
 .guide .arch{aspect-ratio:4/5;max-width:420px;box-shadow:0 30px 60px -30px rgba(43,25,21,.45)}
 .guide .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.guide h2{margin-bottom:24px}
+.guide h2{margin-bottom:20px}
 .guide p{font-size:1.1rem;color:var(--ink-soft);max-width:34em}
+.creds{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.creds li{font-size:.86rem;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--cream);border:1px solid var(--sand)}
 
 /* ---------- PLACE ---------- */
 .place{background:var(--plum-2);color:var(--ivory)}
 .place-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;align-items:end;margin-bottom:48px}
 .place-head p{color:var(--on-dark-soft);font-size:1.1rem;margin:0}
-.mosaic{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:clamp(420px,52vw,620px)}
-.mosaic figure{margin:0;border-radius:var(--radius);overflow:hidden;position:relative}
-.mosaic figure:first-child{grid-row:span 2;border-radius:999px 999px var(--radius) var(--radius)}
-.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+/* The video sets the height; the two photos split it, so they never stretch the row. */
+.mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:14px}
+.mosaic figure{margin:0;border-radius:var(--radius);overflow:hidden;position:relative;min-height:0}
+.mosaic figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
 .mosaic figure:hover img{transform:scale(1.04)}
 .mosaic figcaption{position:absolute;left:14px;bottom:14px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,7,15,.66);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px}
+.tour{grid-row:span 2;position:relative;display:block;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--night);color:var(--ivory);text-decoration:none}
+.tour img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.tour::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,7,15,.82), rgba(18,7,15,.1) 55%, rgba(18,7,15,.25))}
+.tour:hover img{transform:scale(1.04)}
+.tour-play{position:absolute;z-index:1;left:50%;top:46%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--coral);color:#1d0b10;display:grid;place-items:center;box-shadow:0 0 0 12px rgba(254,96,53,.22);transition:transform .25s ease, box-shadow .25s ease}
+.tour-play svg{width:28px;height:28px;margin-left:4px}
+.tour:hover .tour-play{transform:scale(1.06);box-shadow:0 0 0 16px rgba(254,96,53,.2)}
+.tour-cap{position:absolute;z-index:1;left:clamp(16px,2.4vw,26px);right:16px;bottom:clamp(14px,2.2vw,22px)}
+.tour-cap b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15}
+.tour-cap span{font-size:.88rem;color:var(--on-dark-soft)}
+.tour iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tour.is-playing::after{display:none}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 40px;margin:44px 0 0;padding:0;list-style:none}
 .features li{display:flex;gap:12px;color:#e6d9cc}
 .features li::before{content:"";flex:none;width:8px;height:8px;margin-top:10px;background:var(--gold-lt);transform:rotate(45deg)}
@@ -279,9 +341,16 @@ p{margin:0 0 1em}
   radial-gradient(ellipse 60% 60% at 85% 20%, rgba(176,58,88,.3), transparent 70%),
   var(--plum);color:var(--ivory);overflow:hidden}
 .final .rose-bg{position:absolute;width:900px;max-width:none;aspect-ratio:1;left:-300px;bottom:-380px;opacity:.28;pointer-events:none}
-.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);position:relative;z-index:1;align-items:start}
+/* On phones the form comes straight after the steps; the extras go below it. */
+.final-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;grid-template-areas:"intro form" "more form";column-gap:clamp(40px,6vw,90px);position:relative;z-index:1;align-items:start}
+.final-intro{grid-area:intro}.final-more{grid-area:more}.final .form-card{grid-area:form}
 .final h2{font-size:clamp(2.6rem,5.6vw,4.4rem)}
 .final .lede{color:var(--on-dark-soft);font-size:1.12rem;margin:22px 0 30px;max-width:30em}
+.steps{list-style:none;counter-reset:step;margin:0 0 34px;padding:0;display:grid;gap:18px;max-width:30em}
+.steps li{counter-increment:step;display:grid;grid-template-columns:44px 1fr;column-gap:16px}
+.steps li::before{content:counter(step);grid-row:span 2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(220,192,138,.4);display:grid;place-items:center;font-family:var(--serif);font-size:1.4rem;color:var(--gold-lt)}
+.steps b{font-weight:600;padding-top:1px}
+.steps span{color:var(--on-dark-soft);font-size:.96rem}
 .big-count{display:flex;gap:14px;margin-bottom:34px}
 .big-count div{flex:1;max-width:120px;border:1px solid rgba(220,192,138,.3);border-radius:14px;padding:14px 10px;text-align:center}
 .big-count b{display:block;font-family:var(--serif);font-size:clamp(2.2rem,4vw,3rem);font-weight:500;line-height:1}
@@ -332,6 +401,10 @@ footer a{color:var(--on-dark-soft)}
 .sticky .when{font-size:.82rem;line-height:1.3;color:var(--on-dark-soft)}
 .sticky .when b{display:block;color:var(--ivory);font-weight:600;font-size:.92rem}
 .sticky .btn{min-height:46px;padding:10px 20px;font-size:.95rem}
+.sticky .when{min-width:0}
+.sticky .when b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-actions{display:flex;gap:8px;flex:none}
+.sticky .btn-icon{width:46px;padding:0}
 @media (min-width:861px){
   .sticky{left:auto;right:24px;bottom:24px;border-radius:999px;border:1px solid rgba(220,192,138,.25);padding:8px 8px 8px 22px;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);transform:translateY(160%)}
 }
@@ -352,7 +425,13 @@ footer a{color:var(--on-dark-soft)}
   .facts{grid-template-columns:1fr 1fr}
   .facts div{padding:16px 12px 18px 0}
   .facts dd{font-size:1.15rem}
-  .mirror-grid,.day-grid,.guide-grid,.prep-grid,.final-grid,.place-head{grid-template-columns:1fr}
+  .mirror-grid,.day-grid,.guide-grid,.prep-grid,.place-head,.fit-grid{grid-template-columns:1fr}
+  .final-grid{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"intro" "form" "more";row-gap:44px}
+  .stats{grid-template-columns:1fr}
+  .stats li,.stats li + li{padding:22px 0 24px;border-left:0}
+  .stats li + li{border-top:1px solid var(--sand)}
+  .voices{grid-template-columns:1fr;gap:14px}
+  .voices blockquote{font-size:1.25rem;padding:22px 22px 24px}
   .mirror h2{position:static}
   .weeks-grid{grid-template-columns:1fr}
   .rose-stage{display:none}
@@ -364,9 +443,14 @@ footer a{color:var(--on-dark-soft)}
   .timeline li::after{left:83px}
   .timeline time{font-size:1.12rem;white-space:nowrap}
   .guide .arch{max-width:300px;margin:0 auto}
-  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;height:auto}
-  .mosaic figure:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3.4}
-  .mosaic figure:not(:first-child){aspect-ratio:1}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px}
+  .tour{grid-column:span 2;grid-row:auto}
+  .tour-play{top:40%;width:60px;height:60px;margin:-30px 0 0 -30px;box-shadow:0 0 0 8px rgba(254,96,53,.22)}
+  .tour-play svg{width:22px;height:22px;margin-left:3px}
+  .tour-cap b{font-size:1.25rem}
+  .tour-cap span{font-size:.8rem}
+  .mosaic figure{aspect-ratio:1}
+  .mosaic figcaption{left:10px;bottom:10px;font-size:.68rem;letter-spacing:.08em;padding:5px 10px}
   .features{grid-template-columns:1fr}
   .rooms{grid-template-columns:1fr}
   .checklist li{grid-template-columns:1fr;gap:2px}
@@ -376,7 +460,7 @@ footer a{color:var(--on-dark-soft)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .hero h1 span,.js .hero .rise,.js .reveal{opacity:1;transform:none}
+  .js .hero h1 span,.js .reveal{opacity:1;transform:none}
   .js .rose.draw path{stroke-dashoffset:0}
 }
 </style>
@@ -386,6 +470,7 @@ footer a{color:var(--on-dark-soft)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.99 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.32.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
   <symbol id="i-share" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></symbol>
 </svg>
 
@@ -393,7 +478,7 @@ footer a{color:var(--on-dark-soft)}
 <header class="hero" id="top">
   <div class="wrap">
     <div class="topbar">
-      <a class="brand" href="https://oshojaipur.com/"><img src="assets/logo-osho.png" alt="Osho Jaipur" width="52" height="52"><span>Osho Jaipur</span></a>
+      <a class="brand" href="#top"><img src="assets/logo-osho.png" alt="Osho Jaipur" width="52" height="52"><span>Osho Jaipur</span></a>
       <nav class="topnav" aria-label="Page">
         <a href="#process">The process</a>
         <a href="#day">A day</a>
@@ -406,20 +491,21 @@ footer a{color:var(--on-dark-soft)}
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow rise">OSHO Mystic Rose · 10–31 October 2026</p>
+        <p class="eyebrow">OSHO Mystic Rose · 10–31 October 2026</p>
         <h1><span class="l1">Laugh.</span><span class="l2">Cry.</span><span class="l3">Then be silent.</span></h1>
-        <p class="tag-hi deva rise" lang="hi">हँसो · रोओ · फिर मौन</p>
-        <p class="lede rise">A <strong>21-day meditative therapy</strong>: one week of laughter, one week of tears, one week of silent watching, three hours a day. Guided by <strong>Ma Shallu Annand</strong> at Osho Jaipur's meditation centre in nature.</p>
-        <div class="cta-row rise">
+        <p class="tag-hi deva" lang="hi">हँसो · रोओ · फिर मौन</p>
+        <p class="lede">A <strong>21-day residential meditation retreat</strong>: one week of laughter, one week of tears, one week of silent watching, three hours a day. Guided by <strong>Ma Shallu Annand</strong>, an OSHO-certified facilitator, at Osho Jaipur's meditation centre in nature.</p>
+        <div class="cta-row">
           <a class="btn btn-primary" data-wa="join" data-place="hero" href="https://wa.me/919828843839?text=Hi%20Osho%20Jaipur%2C%20I%27d%20like%20to%20join%20OSHO%20Mystic%20Rose%20(10%E2%80%9331%20Oct%202026)."><svg><use href="#i-wa"/></svg><span data-when="before">Reserve on WhatsApp</span><span data-when="after" hidden>Tell me about the next one</span></a>
           <a class="btn btn-ghost" href="tel:+919828843839" data-call><svg><use href="#i-phone"/></svg>Call 98288 43839</a>
         </div>
-        <div class="countdown rise" data-when="before">
+        <a class="tour-link" href="#tour" data-tour-link><i aria-hidden="true"><svg><use href="#i-play"/></svg></i><span><b>See the centre</b> · 1-minute video</span></a>
+        <div class="countdown" data-when="before">
           <i class="pulse" aria-hidden="true"></i>
-          <span>Arrival Sat 10 Oct, 4 PM ·</span>
+          <span><span data-cd-label>Arrival Sat 10 Oct, 4 PM</span> ·</span>
           <span><b data-cd="d">–</b> days <b data-cd="h">–</b> hrs <b data-cd="m">–</b> min to go</span>
         </div>
-        <div class="countdown rise" data-when="after" hidden>
+        <div class="countdown" data-when="after" hidden>
           <i class="pulse" aria-hidden="true"></i>
           <span>This Mystic Rose is in session. Message us to hear first about the next one.</span>
         </div>
@@ -451,7 +537,7 @@ footer a{color:var(--on-dark-soft)}
         <li class="reveal">How many tears have you swallowed because it wasn't the right time, or the right place?</li>
         <li class="reveal">And when you finally sit to meditate, why won't the mind go quiet?</li>
       </ul>
-      <p class="body reveal">Osho saw that most of us carry two layers between ourselves and silence: the laughter we never let out, and beneath it, the tears we never allowed. The Mystic Rose works through both, one week at a time, so that silence isn't something you have to force. It's what is left.</p>
+      <p class="body reveal">When Osho created the Mystic Rose in 1988, he pointed to two layers most of us carry between ourselves and silence: the laughter we never let out, and beneath it, the tears we never allowed. The Mystic Rose works through both, one week at a time, so that silence isn't something you have to force. It's what is left.</p>
       <blockquote class="pull reveal">
         <p>“I have invented many meditations, but perhaps this will be the most essential and fundamental one.”</p>
         <cite>Osho, on the Mystic Rose</cite>
@@ -511,6 +597,61 @@ footer a{color:var(--on-dark-soft)}
   </div>
 </section>
 
+<!-- ================= PROOF ================= -->
+<section class="proof sec" id="stories">
+  <div class="wrap">
+    <div class="proof-head">
+      <p class="eyebrow">What stays with people</p>
+      <h2>Ninety-seven people were asked <em>what it changed.</em></h2>
+      <p>In 2026, Osho Dham in New Delhi asked 97 people who had completed the Mystic Rose, some a few months earlier and some years before, how they felt when it ended and what stayed with them.</p>
+    </div>
+    <ul class="stats reveal">
+      <li><b>65%</b><span>of first-timers said they were better able to handle life's challenges</span></li>
+      <li><b>73%</b><span>of those who came back for another round felt light, alive and good in the body when it ended</span></li>
+      <li><b>4 of 97</b><span>said the effects had faded, or never came. Everyone else described something that lasted.</span></li>
+    </ul>
+    <!-- TODO: add 2–3 short quotes from Osho Jaipur's own past participants (with their permission;
+         first name and city). Your own people's words will convert better than any study. -->
+    <ul class="voices">
+      <li class="reveal"><blockquote>It felt as if heavy layers were melting away, leaving me lighter and freer.</blockquote></li>
+      <li class="reveal"><blockquote>I was able to stand back and reflect on my situation, rather than react compulsively.</blockquote></li>
+      <li class="reveal"><blockquote>I worry less about little problems. I'm trying out more things now, things I avoided before.</blockquote></li>
+    </ul>
+    <p class="source">Figures and quotes are from a questionnaire study of 97 Mystic Rose participants by Swami Vee, commissioned by Osho Dham, New Delhi. <a href="https://www.oshonews.com/2026/07/15/osho-mystic-rose-a-study-of-participants-experiences/" target="_blank" rel="noopener">Read the study on Osho News</a></p>
+  </div>
+</section>
+
+<!-- ================= FIT ================= -->
+<section class="fit sec" id="fit">
+  <div class="wrap">
+    <div class="fit-head">
+      <p class="eyebrow">Is it for you?</p>
+      <h2>Made for people who've been <em>strong for too long.</em></h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card fit-yes reveal">
+        <h3>This is for you if…</h3>
+        <ul class="ticks">
+          <li>You've been holding it together for a long time, and it's getting heavy.</li>
+          <li>You can't remember the last time you really laughed, or really cried.</li>
+          <li>You meditate, or want to, but the mind won't settle.</li>
+          <li>You're at a turning point and want to meet it with a clear head.</li>
+          <li>You're ready to give yourself 21 days away from everyday life.</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-ask reveal">
+        <h3>Talk to us first if…</h3>
+        <ul class="ticks ask">
+          <li><span><b>You're pregnant, or recovering from surgery or an injury.</b> OSHO Dynamic and Kundalini are physically active.</span></li>
+          <li><span><b>You're being treated for a physical or mental-health condition.</b> The Mystic Rose is a meditation, not a substitute for medical or psychological care.</span></li>
+          <li><span><b>You can't stay all 21 days.</b> Each week builds on the last.</span></li>
+        </ul>
+        <a class="btn btn-line" data-wa="question" data-place="fit" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg>Ask us honestly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= A DAY ================= -->
 <section class="day sec" id="day">
   <div class="wrap day-grid">
@@ -537,8 +678,15 @@ footer a{color:var(--on-dark-soft)}
     <div class="reveal">
       <p class="eyebrow">Your facilitator</p>
       <h2>Ma Shallu <em>Annand</em></h2>
-      <!-- TODO: add 2–3 lines of Ma Shallu's background (years with Osho, Mystic Rose groups led, training). This is the single biggest trust-builder on the page. -->
-      <p>Ma Shallu Annand facilitates this Mystic Rose and holds the group through all three weeks, from the first awkward giggles to the last hour of silence.</p>
+      <!-- Bio taken from shalluannand.com/about (Oct 2026). Ask Ma Shallu to approve it, and to add how many
+           Mystic Rose groups she has led, before ads go live. -->
+      <ul class="creds">
+        <li>Meditating since 1998</li>
+        <li>OSHO Multiversity, Pune</li>
+        <li>OSHO Meditative Therapies facilitator</li>
+      </ul>
+      <p>Ma Shallu has been meditating since 1998, with OSHO, Zen and Sufi practices. She trained as an OSHO Meditation Facilitator at the OSHO Multiversity in Pune, and is certified by the OSHO Foundation in Switzerland to lead the OSHO Meditative Therapies, the family of processes the Mystic Rose belongs to.</p>
+      <p>She has also spent more than a decade as an emotional-wellness coach, and trained as a classical dancer. She holds the group through all three weeks, from the first awkward giggles to the last hour of silence.</p>
       <p>Not sure if this is right for you? Message us. We'll answer honestly, including if now might not be the right time.</p>
       <div class="cta-row" style="margin-top:28px">
         <a class="btn btn-line" data-wa="question" data-place="facilitator" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg>Ask a question</a>
@@ -557,8 +705,14 @@ footer a{color:var(--on-dark-soft)}
       </div>
       <p>The centre sits in Chatarpura village off Benar Road, 45–75 minutes from Jaipur's old city. It's far enough out that the noise stays behind, and close enough that you're easy to reach.</p>
     </div>
+    <!-- The video loads from YouTube only when tapped, so it costs nothing on page load.
+         The poster is our own photo: YouTube's auto-thumbnail for this video is a doorway. -->
     <div class="mosaic reveal">
-      <figure><img src="assets/gardens.jpg" alt="Gardens and residence building at the Osho Jaipur meditation centre" loading="lazy" width="1280" height="960"><figcaption>The gardens</figcaption></figure>
+      <a class="tour" id="tour" href="https://www.youtube.com/watch?v=1jzgxVYrJtw" data-yt="1jzgxVYrJtw" target="_blank" rel="noopener">
+        <img src="assets/gardens.jpg" alt="" loading="lazy" width="1280" height="960">
+        <span class="tour-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+        <span class="tour-cap"><b>Walk through the centre</b><span>Play video · 59 sec</span></span>
+      </a>
       <figure><img src="assets/meditation-hall.jpg" alt="The spacious meditation hall with red curtains and cushions" loading="lazy" width="1100" height="825"><figcaption>Meditation hall</figcaption></figure>
       <figure><img src="assets/garden-path.jpg" alt="Tree-lined path through the centre" loading="lazy" width="1100" height="825"><figcaption>Walking paths</figcaption></figure>
     </div>
@@ -623,6 +777,8 @@ footer a{color:var(--on-dark-soft)}
     <div class="faq">
       <h2>Questions, <em>answered.</em></h2>
       <details><summary>I've never meditated. Is this too much for a beginner?</summary><p>No. Beginners are guided step by step, and there's an orientation on arrival day. You don't need any technique. Laughing, crying and sitting are things everyone already knows how to do.</p></details>
+      <details><summary>Will I have to talk about my problems?</summary><p>No. The Mystic Rose works without analysis. You don't need to explain your laughter or your tears to anyone, and nobody asks why. You just keep showing up for the three hours.</p></details>
+      <details><summary>I have a health condition. Can I join?</summary><p>Please talk to us before booking. OSHO Dynamic and Kundalini are physically active, and the process can bring up strong feelings. If you're pregnant, recovering from surgery or an injury, or being treated for a physical or mental-health condition, message us and we'll talk it through honestly. The Mystic Rose is a meditation, not a substitute for medical or psychological care.</p></details>
       <details><summary>What if I can't laugh, or can't cry?</summary><p>Almost everyone wonders this. Nobody is asked to perform. You keep showing up for the three hours and let whatever happens, happen. Often it begins as pretending and turns real. Some days it won't, and that is part of the process too.</p></details>
       <details><summary>Is this like laughter yoga or a laughter club?</summary><p>No. There are no exercises or breathing techniques. Laughter is the first week of a 21-day process that moves through tears into silent meditation.</p></details>
       <details><summary>Can I join for only one or two weeks?</summary><p>The three weeks are designed as one journey, and each builds on the last. If the full 21 days isn't possible for you, message us before booking and we'll talk it through.</p></details>
@@ -637,12 +793,19 @@ footer a{color:var(--on-dark-soft)}
 <section class="final sec" id="reserve">
   <div class="rose rose-bg" data-rose aria-hidden="true"></div>
   <div class="wrap final-grid">
-    <div>
+    <div class="final-intro">
       <p class="eyebrow">Your place in the circle</p>
       <h2>Come as you are.<br><em>Leave a little lighter.</em></h2>
-      <p class="lede" data-when="before">Send us your details on WhatsApp. We'll confirm your place, your room and the contribution, usually the same day.</p>
+      <p class="lede" data-when="before">Booking takes a few minutes and happens on WhatsApp, with a real person.</p>
       <p class="lede" data-when="after" hidden>This Mystic Rose has begun. Leave your details and we'll tell you first when the next one is announced.</p>
+      <ol class="steps" data-when="before">
+        <li><b>Send your details</b><span>Use the form, or message us on WhatsApp.</span></li>
+        <li><b>Hear back, usually the same day</b><span>We'll share room availability and the contribution for the full 21 days.</span></li>
+        <li><b>Confirm your place</b><span>Pay by UPI or bank transfer, and your room is held for you.</span></li>
+      </ol>
+    </div>
 
+    <div class="final-more">
       <div class="big-count" data-when="before" aria-label="Time until arrival">
         <div><b data-cd="d">–</b><span>Days</span></div>
         <div><b data-cd="h">–</b><span>Hours</span></div>
@@ -669,11 +832,6 @@ footer a{color:var(--on-dark-soft)}
       <div class="field">
         <label for="f-name">Your name</label>
         <input id="f-name" name="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="field">
-        <label for="f-phone">WhatsApp number</label>
-        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98xxx xxxxx" aria-describedby="f-phone-err" required>
-        <p class="field-error" id="f-phone-err" hidden>Please enter a WhatsApp number with at least 10 digits.</p>
       </div>
       <div class="field">
         <label for="f-city">City</label>
@@ -738,9 +896,12 @@ footer a{color:var(--on-dark-soft)}
 </footer>
 
 <div class="sticky" data-sticky>
-  <div class="when" data-when="before"><b>Arrival Sat 10 Oct, 4 PM</b><span data-cd-short>21 days · Jaipur</span></div>
+  <div class="when" data-when="before"><b data-cd-label>Arrival Sat 10 Oct, 4 PM</b><span data-cd-short>21 days · Jaipur</span></div>
   <div class="when" data-when="after" hidden><b>OSHO Mystic Rose</b><span>Hear about the next one</span></div>
-  <a class="btn btn-primary" data-wa="join" data-place="sticky" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg><span data-when="before">Reserve</span><span data-when="after" hidden>Join list</span></a>
+  <div class="sticky-actions">
+    <a class="btn btn-ghost btn-icon" href="tel:+919828843839" data-call aria-label="Call 98288 43839"><svg><use href="#i-phone"/></svg></a>
+    <a class="btn btn-primary" data-wa="join" data-place="sticky" href="https://wa.me/919828843839"><svg><use href="#i-wa"/></svg><span data-when="before">Reserve</span><span data-when="after" hidden>Join list</span></a>
+  </div>
 </div>
 
 <script>
@@ -782,7 +943,7 @@ footer a{color:var(--on-dark-soft)}
   var LEAD_FORM = {
     id: '',     // the long ID between /forms/d/e/ and /viewform
     fields: {   // 'entry.123456789' for each question
-      name: '', phone: '', chat: '', city: '', room: '', exp: '', note: '', source: ''
+      name: '', city: '', room: '', exp: '', note: '', source: ''
     }
   };
 
@@ -797,13 +958,6 @@ footer a{color:var(--on-dark-soft)}
     var url = 'https://docs.google.com/forms/d/e/' + LEAD_FORM.id + '/formResponse';
     try { if (navigator.sendBeacon && navigator.sendBeacon(url, body)) return; } catch (e) {}
     try { fetch(url, { method: 'POST', mode: 'no-cors', keepalive: true, body: body }); } catch (e) {}
-  }
-
-  // A 10-digit number is an Indian mobile. Formatted with spaces so the Sheet keeps it as text.
-  function phoneForSheet(raw) {
-    var d = raw.replace(/\D/g, '').replace(/^0+/, '').slice(0, 15);
-    if (d.length === 10) d = '91' + d;
-    return { text: '+' + d.replace(/^91(\d{5})(\d{5})$/, '91 $1 $2'), chat: 'https://wa.me/' + d };
   }
 
   function waUrl(text) {
@@ -847,12 +1001,23 @@ footer a{color:var(--on-dark-soft)}
 
   /* ---------- Countdown ---------- */
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  // Midnight of the visitor's day in India, so "tomorrow" means the IST calendar.
+  function istDay(t) { var x = new Date(t + 198e5); return Date.UTC(x.getUTCFullYear(), x.getUTCMonth(), x.getUTCDate()); }
+  function startLabel() {
+    var days = Math.round((istDay(START) - istDay(Date.now())) / 864e5);
+    if (days === 0) return 'Starts today, 4 PM';
+    if (days === 1) return 'Starts tomorrow, 4 PM';
+    if (days < 7) return 'Starts this Saturday';
+    return 'Arrival Sat 10 Oct, 4 PM';
+  }
   function tick() {
     var diff = START - Date.now();
     if (diff <= 0) {
       if (!started) { started = true; applyState(); }
       return;
     }
+    var label = startLabel();
+    document.querySelectorAll('[data-cd-label]').forEach(function (el) { el.textContent = label; });
     var d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4);
     document.querySelectorAll('[data-cd="d"]').forEach(function (el) { el.textContent = d; });
     document.querySelectorAll('[data-cd="h"]').forEach(function (el) { el.textContent = pad(h); });
@@ -936,6 +1101,45 @@ footer a{color:var(--on-dark-soft)}
     document.querySelectorAll('.reveal').forEach(function (n) { n.classList.add('in'); });
   }
 
+  /* ---------- Video tour ---------- */
+  // Swaps the poster link for the YouTube player on tap. Nothing loads from
+  // YouTube before that, so the video doesn't slow the page down.
+  function playTour(placement) {
+    var link = document.getElementById('tour');
+    if (!link || link.tagName !== 'A') return link;
+    var box = document.createElement('div');
+    box.className = 'tour is-playing';
+    box.id = 'tour';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + link.getAttribute('data-yt') + '?autoplay=1&rel=0&playsinline=1';
+    f.title = 'A walk through the Osho Jaipur meditation centre (YouTube video)';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin'; // YouTube refuses embeds sent without a referrer
+    box.appendChild(f);
+    link.parentNode.replaceChild(box, link);
+    track('video_play', { placement: placement, source: source });
+    return box;
+  }
+  var tour = document.getElementById('tour');
+  if (tour) {
+    tour.addEventListener('click', function (e) { e.preventDefault(); playTour('place'); });
+    tour.addEventListener('pointerover', function () {
+      var l = document.createElement('link');
+      l.rel = 'preconnect';
+      l.href = 'https://www.youtube-nocookie.com';
+      document.head.appendChild(l);
+    }, { once: true });
+  }
+  document.querySelectorAll('[data-tour-link]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var box = playTour('hero');
+      if (!box) return;
+      e.preventDefault();
+      box.scrollIntoView({ block: 'center' });
+    });
+  });
+
   /* ---------- Share ---------- */
   var shareBtn = document.querySelector('[data-share]');
   shareBtn.addEventListener('click', function () {
@@ -954,10 +1158,8 @@ footer a{color:var(--on-dark-soft)}
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var F = form.elements;
-    var name = F.name.value.trim(), phone = F.phone.value.trim(), city = F.city.value.trim();
-    var phoneOk = phone.replace(/\D/g, '').length >= 10;
+    var name = F.name.value.trim(), city = F.city.value.trim();
     if (!name) { F.name.focus(); F.name.setAttribute('aria-invalid', 'true'); return; }
-    if (!phoneOk) { F.phone.focus(); F.phone.setAttribute('aria-invalid', 'true'); document.getElementById('f-phone-err').hidden = false; return; }
     if (!city) { F.city.focus(); F.city.setAttribute('aria-invalid', 'true'); return; }
     var room = (form.querySelector('input[name=room]:checked') || {}).value || 'Not sure yet';
     var lines = [
@@ -973,8 +1175,7 @@ footer a{color:var(--on-dark-soft)}
     if (note) lines.push('Note: ' + note);
     track('lead_form_submit', { room: room, experience: F.exp.value, source: source });
     if (!F.website.value) { // hidden field that only bots fill in
-      var ph = phoneForSheet(phone);
-      saveLead({ name: name, phone: ph.text, chat: ph.chat, city: city, room: room, exp: F.exp.value, note: note, source: source });
+      saveLead({ name: name, city: city, room: room, exp: F.exp.value, note: note, source: source });
     }
     var url = waUrl(lines.join('\n'));
     form.querySelector('[data-done-name]').textContent = name.split(' ')[0];
@@ -986,7 +1187,6 @@ footer a{color:var(--on-dark-soft)}
   });
   form.addEventListener('input', function (e) {
     if (e.target.getAttribute('aria-invalid')) e.target.removeAttribute('aria-invalid');
-    if (e.target.name === 'phone') document.getElementById('f-phone-err').hidden = true;
   });
 })();
 </script>
