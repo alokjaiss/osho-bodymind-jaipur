@@ -65,6 +65,17 @@
   "uploadDate": "2025-05-25T10:45:10-07:00",
   "duration": "PT59S",
   "embedUrl": "https://www.youtube-nocookie.com/embed/1jzgxVYrJtw"
+},
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Mystic Rose Invitation",
+  "description": "Ma Shallu Annand invites you to the OSHO Mystic Rose at Osho Jaipur, 10–31 October 2026. In Hindi.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mjuArEeO1O4/oardefault.jpg",
+  "uploadDate": "2026-10-06T21:21:05-07:00",
+  "duration": "PT38S",
+  "inLanguage": "hi",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/mjuArEeO1O4"
 }]
 </script>
 
@@ -175,6 +186,19 @@ p{margin:0 0 1em}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes breathe{from{transform:scale(.965)}to{transform:scale(1.025)}}
 
+/* ---------- INVITATION ---------- */
+.invite{background:var(--cream)}
+.invite-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);grid-template-areas:"reel head" "reel body";column-gap:clamp(40px,7vw,100px);align-items:center}
+.invite-head{grid-area:head;align-self:end;margin-bottom:22px}
+.invite-body{grid-area:body;align-self:start}
+.invite-body p{font-size:1.1rem;color:var(--ink-soft);max-width:30em;margin-bottom:28px}
+.invite .tour-link{color:var(--ink-soft)}
+.invite .tour-link b{color:var(--ink)}
+.invite .tour-link i{border-color:rgba(109,26,44,.35);color:var(--maroon)}
+.invite .tour-link:hover i{background:rgba(109,26,44,.07)}
+.reel{grid-area:reel;position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:var(--night);color:var(--ivory);text-decoration:none;box-shadow:0 30px 60px -30px rgba(43,25,21,.5)}
+.reel .tour-play{top:64%} /* below her face, not on it */
+
 /* ---------- MIRROR ---------- */
 .mirror{background:var(--ivory)}
 .mirror-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:start}
@@ -257,17 +281,17 @@ p{margin:0 0 1em}
 .mosaic figure:hover img{transform:scale(1.04)}
 .mosaic figcaption{position:absolute;left:14px;bottom:14px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,7,15,.66);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px}
 .tour{grid-row:span 2;position:relative;display:block;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--night);color:var(--ivory);text-decoration:none}
-.tour img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
-.tour::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,7,15,.82), rgba(18,7,15,.1) 55%, rgba(18,7,15,.25))}
-.tour:hover img{transform:scale(1.04)}
+.tour img,.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.tour::after,.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,7,15,.82), rgba(18,7,15,.1) 55%, rgba(18,7,15,.25))}
+.tour:hover img,.reel:hover img{transform:scale(1.04)}
 .tour-play{position:absolute;z-index:1;left:50%;top:46%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--coral);color:#1d0b10;display:grid;place-items:center;box-shadow:0 0 0 12px rgba(254,96,53,.22);transition:transform .25s ease, box-shadow .25s ease}
 .tour-play svg{width:28px;height:28px;margin-left:4px}
-.tour:hover .tour-play{transform:scale(1.06);box-shadow:0 0 0 16px rgba(254,96,53,.2)}
+.tour:hover .tour-play,.reel:hover .tour-play{transform:scale(1.06);box-shadow:0 0 0 16px rgba(254,96,53,.2)}
 .tour-cap{position:absolute;z-index:1;left:clamp(16px,2.4vw,26px);right:16px;bottom:clamp(14px,2.2vw,22px)}
 .tour-cap b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15}
 .tour-cap span{font-size:.88rem;color:var(--on-dark-soft)}
-.tour iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.tour.is-playing::after{display:none}
+.tour iframe,.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tour.is-playing::after,.reel.is-playing::after{display:none}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 40px;margin:44px 0 0;padding:0;list-style:none}
 .features li{display:flex;gap:12px;color:#e6d9cc}
 .features li::before{content:"";flex:none;width:8px;height:8px;margin-top:10px;background:var(--gold-lt);transform:rotate(45deg)}
@@ -394,6 +418,9 @@ footer a{color:var(--on-dark-soft)}
   .facts div{padding:16px 12px 18px 0}
   .facts dd{font-size:1.15rem}
   .mirror-grid,.day-grid,.guide-grid,.prep-grid,.place-head{grid-template-columns:1fr}
+  .invite-grid{grid-template-columns:1fr;grid-template-areas:"head" "reel" "body"}
+  .invite-head{margin-bottom:28px}
+  .reel{max-width:300px;justify-self:center;margin-bottom:32px}
   .final-grid{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"intro" "form" "more";row-gap:44px}
   .mirror h2{position:static}
   .weeks-grid{grid-template-columns:1fr}
@@ -461,7 +488,7 @@ footer a{color:var(--on-dark-soft)}
           <a class="btn btn-primary" data-wa="join" data-place="hero" href="https://wa.me/919828843839?text=Hi%20Osho%20Jaipur%2C%20I%27d%20like%20to%20join%20OSHO%20Mystic%20Rose%20(10%E2%80%9331%20Oct%202026)."><svg><use href="#i-wa"/></svg><span data-when="before">Reserve on WhatsApp</span><span data-when="after" hidden>Tell me about the next one</span></a>
           <a class="btn btn-ghost" href="tel:+919828843839" data-call><svg><use href="#i-phone"/></svg>Call 98288 43839</a>
         </div>
-        <a class="tour-link" href="#tour" data-tour-link><i aria-hidden="true"><svg><use href="#i-play"/></svg></i><span><b>See the centre</b> · 1-minute video</span></a>
+        <a class="tour-link" href="#invitation" data-play="invitation" data-place="hero"><i aria-hidden="true"><svg><use href="#i-play"/></svg></i><span><b>Ma Shallu's invitation</b> · 38-second video, in Hindi</span></a>
         <div class="countdown" data-when="before">
           <i class="pulse" aria-hidden="true"></i>
           <span><span data-cd-label>Arrival Sat 10 Oct, 4 PM</span> ·</span>
@@ -485,6 +512,30 @@ footer a{color:var(--on-dark-soft)}
 </header>
 
 <main>
+
+<!-- ================= INVITATION ================= -->
+<!-- Ma Shallu's own invitation (YouTube Short, Hindi, 38 sec). Like the centre video, it loads only when
+     tapped. The poster is the Short's own vertical thumbnail. -->
+<section class="invite sec" id="invite">
+  <div class="wrap invite-grid">
+    <div class="invite-head">
+      <p class="eyebrow">An invitation</p>
+      <h2>Hear it from <em>Ma Shallu.</em></h2>
+    </div>
+    <a class="reel reveal" id="invitation" href="https://www.youtube.com/shorts/mjuArEeO1O4" data-yt="mjuArEeO1O4" data-place="invitation" target="_blank" rel="noopener">
+      <img src="assets/invitation-poster.jpg" alt="" loading="lazy" width="720" height="1280">
+      <span class="tour-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+      <span class="tour-cap"><b>Ma Shallu's invitation</b><span>Play video · 38 sec · in Hindi</span></span>
+    </a>
+    <div class="invite-body reveal">
+      <p>Before you decide, meet the person who will hold the group for all 21 days. In under a minute, Ma Shallu invites you to the Mystic Rose at Osho Jaipur.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" data-wa="join" data-place="invitation" href="https://wa.me/919828843839?text=Hi%20Osho%20Jaipur%2C%20I%27d%20like%20to%20join%20OSHO%20Mystic%20Rose%20(10%E2%80%9331%20Oct%202026)."><svg><use href="#i-wa"/></svg><span data-when="before">Reserve on WhatsApp</span><span data-when="after" hidden>Tell me about the next one</span></a>
+      </div>
+      <a class="tour-link" href="#tour" data-play="tour" data-place="invitation"><i aria-hidden="true"><svg><use href="#i-play"/></svg></i><span><b>Walk through the centre</b> · 59-second video</span></a>
+    </div>
+  </div>
+</section>
 
 <!-- ================= MIRROR ================= -->
 <section class="mirror sec">
@@ -615,7 +666,7 @@ footer a{color:var(--on-dark-soft)}
     <!-- The video loads from YouTube only when tapped, so it costs nothing on page load.
          The poster is our own photo: YouTube's auto-thumbnail for this video is a doorway. -->
     <div class="mosaic reveal">
-      <a class="tour" id="tour" href="https://www.youtube.com/watch?v=1jzgxVYrJtw" data-yt="1jzgxVYrJtw" target="_blank" rel="noopener">
+      <a class="tour" id="tour" href="https://www.youtube.com/watch?v=1jzgxVYrJtw" data-yt="1jzgxVYrJtw" data-place="place" target="_blank" rel="noopener">
         <img src="assets/gardens.jpg" alt="" loading="lazy" width="1280" height="960">
         <span class="tour-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
         <span class="tour-cap"><b>Walk through the centre</b><span>Play video · 59 sec</span></span>
@@ -1008,39 +1059,52 @@ footer a{color:var(--on-dark-soft)}
     document.querySelectorAll('.reveal').forEach(function (n) { n.classList.add('in'); });
   }
 
-  /* ---------- Video tour ---------- */
-  // Swaps the poster link for the YouTube player on tap. Nothing loads from
-  // YouTube before that, so the video doesn't slow the page down.
-  function playTour(placement) {
-    var link = document.getElementById('tour');
+  /* ---------- Videos ---------- */
+  // Each video is a poster link that swaps itself for the YouTube player on
+  // tap. Nothing loads from YouTube before that, so the videos don't slow
+  // the page down.
+  var VIDEO_TITLES = {
+    invitation: "Ma Shallu Annand's invitation to the OSHO Mystic Rose, in Hindi (YouTube video)",
+    tour: 'A walk through the Osho Jaipur meditation centre (YouTube video)'
+  };
+  function playVideo(id, placement) {
+    var link = document.getElementById(id);
     if (!link || link.tagName !== 'A') return link;
     var box = document.createElement('div');
-    box.className = 'tour is-playing';
-    box.id = 'tour';
+    // "in" finishes the fade-in, in case the hero link started a video that hadn't scrolled into view yet
+    box.className = link.className + ' in is-playing';
+    box.id = id;
     var f = document.createElement('iframe');
     f.src = 'https://www.youtube-nocookie.com/embed/' + link.getAttribute('data-yt') + '?autoplay=1&rel=0&playsinline=1';
-    f.title = 'A walk through the Osho Jaipur meditation centre (YouTube video)';
+    f.title = VIDEO_TITLES[id];
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
     f.referrerPolicy = 'strict-origin-when-cross-origin'; // YouTube refuses embeds sent without a referrer
     box.appendChild(f);
     link.parentNode.replaceChild(box, link);
-    track('video_play', { placement: placement, source: source });
+    track('video_play', { video: id, placement: placement, source: source });
     return box;
   }
-  var tour = document.getElementById('tour');
-  if (tour) {
-    tour.addEventListener('click', function (e) { e.preventDefault(); playTour('place'); });
-    tour.addEventListener('pointerover', function () {
-      var l = document.createElement('link');
-      l.rel = 'preconnect';
-      l.href = 'https://www.youtube-nocookie.com';
-      document.head.appendChild(l);
-    }, { once: true });
+  var preconnected = false;
+  function preconnectYouTube() {
+    if (preconnected) return;
+    preconnected = true;
+    var l = document.createElement('link');
+    l.rel = 'preconnect';
+    l.href = 'https://www.youtube-nocookie.com';
+    document.head.appendChild(l);
   }
-  document.querySelectorAll('[data-tour-link]').forEach(function (a) {
+  Object.keys(VIDEO_TITLES).forEach(function (id) {
+    var link = document.getElementById(id);
+    if (!link) return;
+    link.addEventListener('click', function (e) { e.preventDefault(); playVideo(id, link.getAttribute('data-place')); });
+    link.addEventListener('pointerover', preconnectYouTube, { once: true });
+  });
+  // Text links elsewhere on the page that start a video and scroll to it
+  document.querySelectorAll('[data-play]').forEach(function (a) {
+    a.addEventListener('pointerover', preconnectYouTube, { once: true });
     a.addEventListener('click', function (e) {
-      var box = playTour('hero');
+      var box = playVideo(a.getAttribute('data-play'), a.getAttribute('data-place'));
       if (!box) return;
       e.preventDefault();
       box.scrollIntoView({ block: 'center' });

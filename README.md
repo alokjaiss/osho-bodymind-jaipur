@@ -46,7 +46,7 @@ Only booking-form submissions are saved. The quick WhatsApp buttons go straight 
 ## Running Google and YouTube ads to this page
 
 - **Tag every ad link** so each enquiry shows where it came from, for example `?utm_source=google&utm_campaign=search` or `?utm_source=youtube&utm_campaign=tour`.
-- **Conversions:** once GA4 is in, import `lead_form_submit` into Google Ads as the primary conversion, and `whatsapp_click` and `call_click` as secondary ones. `video_play` shows interest but isn't a conversion.
+- **Conversions:** once GA4 is in, import `lead_form_submit` into Google Ads as the primary conversion, and `whatsapp_click` and `call_click` as secondary ones. `video_play` shows interest but isn't a conversion. Its `video` parameter says which one was played (`invitation` for Ma Shallu's invitation, `tour` for the centre walk-through), and `placement` says where it was tapped.
 - **Say the same thing in the ad and on the page.** Headlines that match the page, each under Google's 30-character limit: "OSHO Mystic Rose, Jaipur", "Laugh. Cry. Silent.", "21-Day Meditation Retreat", "10–31 Oct · Osho Jaipur", "With Ma Shallu Annand", "Reserve on WhatsApp".
 - **YouTube:** the 59-second centre video (https://www.youtube.com/watch?v=1jzgxVYrJtw) can run as a video ad, and it's the same video people find on the page. A 15–30 second cut that opens with "Laugh. Cry. Silent." would match the page headline even better.
 - **Policy:** Google restricts personalised ads based on health and mental-health conditions. Don't build audiences around conditions like depression or anxiety, and don't promise cures or guaranteed results in ad text. Target interests such as meditation, Osho, spiritual retreats and yoga instead.

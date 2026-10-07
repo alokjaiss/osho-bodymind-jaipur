@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 5 (v5.0) · 7 October 2026
+
+Ma Shallu's own invitation, straight after the hero:
+
+- **New "An invitation" section** between the hero and "Why the Mystic Rose": her 38-second YouTube Short, in Hindi ("🌹Mystic Rose Invitation🌹" from Osho Jaipur's channel), with a Reserve on WhatsApp button and a link to the centre video. On desktop the vertical video sits beside the text. On phones it comes between the heading and the text.
+- **The hero's video link now plays her invitation** ("Ma Shallu's invitation · 38-second video, in Hindi") instead of the centre tour. The tour stays at the top of "The place" and is one tap away from the new section.
+- **Still fast.** Like the tour, the invitation loads from YouTube only when tapped. The poster is the Short's own vertical thumbnail of her in the garden, saved in `assets/invitation-poster.jpg`.
+- **Tracking:** `video_play` now carries a `video` parameter (`invitation` or `tour`), so you can compare the two. The invitation also has its own `VideoObject` structured data, marked as Hindi.
+
 ## Release 4 (v4.0) · 7 October 2026
 
 A gentler headline:
