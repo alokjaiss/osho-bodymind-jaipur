@@ -360,7 +360,7 @@ p{margin:0 0 1em}
 .form-card .sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:22px}
 .field{margin-bottom:18px}
 .field label,.field legend{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;padding:0}
-.field input[type=text],.field select,.field textarea{width:100%;font:400 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid var(--sand);border-radius:12px;padding:13px 14px;min-height:50px}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{width:100%;font:400 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid var(--sand);border-radius:12px;padding:13px 14px;min-height:50px}
 .field textarea{min-height:84px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--maroon);box-shadow:0 0 0 3px rgba(109,26,44,.12)}
 fieldset.field{border:0;margin:0 0 18px;padding:0}
@@ -792,6 +792,10 @@ footer a{color:var(--on-dark-soft)}
         <input id="f-name" name="name" type="text" autocomplete="name" required>
       </div>
       <div class="field">
+        <label for="f-phone">WhatsApp number</label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="98xxx xxxxx" required>
+      </div>
+      <div class="field">
         <label for="f-city">City</label>
         <input id="f-city" name="city" type="text" autocomplete="address-level2" required>
       </div>
@@ -899,9 +903,10 @@ footer a{color:var(--on-dark-soft)}
      entry IDs from the form's "Get pre-filled link" URL. Leave id empty to switch
      capture off; WhatsApp works either way. */
   var LEAD_FORM = {
-    id: '',     // the long ID between /forms/d/e/ and /viewform
-    fields: {   // 'entry.123456789' for each question
-      name: '', city: '', room: '', exp: '', note: '', source: ''
+    id: '1FAIpQLSfKNa07T26WNg4j-gipChXds3OT0RcKRrJ8PlPSK4maADrz5A',     // "Mystic Rose Leads"
+    fields: {
+      name: 'entry.1312550233', phone: 'entry.1153664194', city: 'entry.771948033', room: 'entry.589806371',
+      exp: 'entry.1206732773', note: 'entry.243420813', source: 'entry.1679850548'
     }
   };
 
@@ -1124,13 +1129,24 @@ footer a{color:var(--on-dark-soft)}
     }
   });
 
+  // The Sheet gets digits only: "+91 98288-43839" and "098288 43839" both become 9828843839.
+  // Numbers from outside India keep their country code.
+  function phoneDigits(phone) {
+    var d = phone.replace(/\D/g, '');
+    if (d.length === 12 && d.indexOf('91') === 0) return d.slice(2);
+    if (d.length === 11 && d.charAt(0) === '0') return d.slice(1);
+    return d;
+  }
+
   /* ---------- Lead form → WhatsApp ---------- */
   var form = document.getElementById('lead-form');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var F = form.elements;
-    var name = F.name.value.trim(), city = F.city.value.trim();
+    var name = F.name.value.trim(), city = F.city.value.trim(), phone = F.phone.value.trim();
     if (!name) { F.name.focus(); F.name.setAttribute('aria-invalid', 'true'); return; }
+    // At least 10 digits; spaces, dashes and a +91 prefix are fine
+    if (phone.replace(/\D/g, '').length < 10) { F.phone.focus(); F.phone.setAttribute('aria-invalid', 'true'); return; }
     if (!city) { F.city.focus(); F.city.setAttribute('aria-invalid', 'true'); return; }
     var room = (form.querySelector('input[name=room]:checked') || {}).value || 'Not sure yet';
     var lines = [
@@ -1138,6 +1154,7 @@ footer a{color:var(--on-dark-soft)}
       started ? 'Please tell me when the next OSHO Mystic Rose is planned.' : "I'd like to reserve a place in " + EVENT + '.',
       '',
       'Name: ' + name,
+      'Phone: ' + phone,
       'City: ' + city,
       'Room preference: ' + room,
       'Experience: ' + F.exp.value
@@ -1146,7 +1163,7 @@ footer a{color:var(--on-dark-soft)}
     if (note) lines.push('Note: ' + note);
     track('lead_form_submit', { room: room, experience: F.exp.value, source: source });
     if (!F.website.value) { // hidden field that only bots fill in
-      saveLead({ name: name, city: city, room: room, exp: F.exp.value, note: note, source: source });
+      saveLead({ name: name, phone: phoneDigits(phone), city: city, room: room, exp: F.exp.value, note: note, source: source });
     }
     var url = waUrl(lines.join('\n'));
     form.querySelector('[data-done-name]').textContent = name.split(' ')[0];

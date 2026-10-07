@@ -18,13 +18,13 @@ Current release: **Release 3 (v3.0)**. See [CHANGELOG.md](CHANGELOG.md) for what
 
 When someone sends the booking form, the page also submits their details to a Google Form in the background, then opens WhatsApp. The form's responses land in a linked Google Sheet. No Apps Script and no account permissions are needed. If the form can't be reached, WhatsApp still opens as normal.
 
-Each response has: name, city, room, experience, note and source (for example `instagram/bio`). The visitor's phone number arrives with their WhatsApp message, so the form doesn't ask for it.
+Each response has: name, phone, city, room, experience, note and source (for example `instagram/bio`). The phone number is asked for on the page too, so the team can follow up even when someone fills in the form but never presses send in WhatsApp (common on laptops without WhatsApp).
 
 ### One-time setup (about 10 minutes)
 
 1. Go to forms.google.com and create a blank form, for example "Mystic Rose Leads".
-2. Add **6 Short answer questions**, in this order: `Name`, `City`, `Room`, `Experience`, `Note`, `Source`. Leave **Required** off on all of them; otherwise responses with an empty field are rejected.
-3. In **Settings → Responses**, set "Collect email addresses" to **Do not collect**, and make sure "Limit to 1 response" is **off**. Otherwise visitors would have to sign in.
+2. Add **7 Short answer questions**: `Name`, `Phone`, `City`, `Room`, `Experience`, `Note`, `Source`. Leave **Required** off on all of them; otherwise responses with an empty field are rejected.
+3. In **Settings → Responses**, set "Collect email addresses" to **Do not collect**, and make sure "Limit to 1 response" is **off**. The page sends responses in the background, without the visitor signed in to Google, so either setting would make Google reject every response. Then click **Publish** and let **anyone with the link** respond; an unpublished form rejects responses too.
 4. In the **Responses** tab, click **Link to Sheets → Select existing spreadsheet** and choose your Sheet. Google adds a "Form responses 1" tab.
 5. For email alerts: in the **Responses** tab, open the ⋮ menu and choose **Get email notifications for new responses**.
 6. Open the ⋮ menu at the top right and choose **Get pre-filled link**. Type the question's own name into each answer (`Name`, `City`, …), click **Get link → Copy link**, and send that link over. It contains the form ID and the `entry.…` ID of each question, which go into `LEAD_FORM` in `index.html`.

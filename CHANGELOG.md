@@ -1,5 +1,13 @@
 # Changelog
 
+## Release 6 (v6.0) · 7 October 2026
+
+Every booking-form lead now lands in a Google Sheet, with a phone number:
+
+- **Lead capture is switched on.** The booking form also sends each lead to the "Mystic Rose Leads" Google Form, whose responses go to the linked Sheet. WhatsApp still opens as before.
+- **The booking form asks for a WhatsApp number again** (it was dropped in Release 2). Without it, someone who fills in the form but never presses send in WhatsApp, which is common on laptops, couldn't be contacted. The page needs at least 10 digits, and the Sheet gets the number as digits only (for example `+91 98288-43839` becomes `9828843839`). The number is also in the WhatsApp message.
+- The Google Form has 7 short-answer questions: Name, Phone, City, Room, Experience, Note, Source. None is required and none has validation, because the page does the checking and Google silently rejects responses that fail its own rules. The README explains why the form must not collect emails.
+
 ## Release 5 (v5.0) · 7 October 2026
 
 Ma Shallu's own invitation, straight after the hero:
