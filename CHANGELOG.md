@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 4 (v4.0) · 7 October 2026
+
+A gentler headline:
+
+- **"Then be silent." is now "Silent."** The old line read as a command. The headline is now "Laugh. Cry. Silent.", and the share title and the README's ad headlines match it.
+- **The Hindi tagline under the headline is gone** ("हँसो · रोओ · फिर मौन"). The Hindi labels on the three week headings stay.
+
 ## Release 3 (v3.0) · 5 October 2026
 
 Release 2, with two sections removed at the team's request:
