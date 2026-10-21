@@ -1,5 +1,18 @@
 # Changelog
 
+## Release 7 (v7.0) · 21 October 2026
+
+The page now promotes the next retreat: **OSHO Reminding Yourself of the Forgotten Language of Talking to Your BodyMind**, 7 days, 15–22 November 2026, with Maitree from Mumbai. Event details come from oshojaipur.com/events and the event poster.
+
+- **New headline and copy.** The hero reads "Relax. Listen. Trust." All sections are rewritten for the BodyMind therapy: why it matters, three movements in "The process" (Relax, Listen, Trust), the daily rhythm, stay, preparation and FAQ. The Osho quote is the one on the event listing: "The body will never misguide you…"
+- **Dates and countdown.** Arrival is Sun 15 Nov at 4 PM and departure is Sun 22 Nov at 2 PM. The countdown, the "Starts this Sunday" label and the switch to "next one" mode all follow the new start. Check-in, robes and November-weather packing notes are updated.
+- **Facilitator: Maitree.** Her photo is cut from the event poster, and she has a short placeholder bio. Her full bio is still to come (see README).
+- **The poster replaces Ma Shallu's invitation video** in the section after the hero, so people who saw it on WhatsApp recognise the page. The hero's video link now plays the centre tour. The invitation `VideoObject` is removed.
+- **Forest-green palette**, after the poster, in place of plum and rose. The 404 page matches. New share image: `assets/og-bodymind.jpg`.
+- **WhatsApp messages** name the BodyMind retreat. "Can't give 21 days?" now points to the centre's daily meditations instead of this retreat.
+- **Leads are tagged.** The Sheet's Source column now starts with `bodymind-nov26 ·`, so these leads can be told apart from Mystic Rose leads in the same form.
+- New FAQ: "I just did the Mystic Rose. Is this a good next step?" The laughter and crying FAQs are removed.
+
 ## Release 6 (v6.0) · 7 October 2026
 
 Every booking-form lead now lands in a Google Sheet, with a phone number:
